@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product</title>
+	<link rel="stylesheet" type="text/css" href="skin/css/style.css">
+</head>
+<body>
+	<div class="body">
+		<div class="box">
+			<h1>CART ITEMS</h1>
+		</div>
+		
+	</div>
+
+	<label for="dropdown">Product Name</label>
+<select id="dropdown" name="dropdown">
+  <option value="">Option 1</option>
+</select>
+
+<label for="dropdown">Express Shipping</label>
+<select id="dropdown" name="dropdown">
+  <option value="">Option 1</option>
+</select>
+
+	<table cellpadding="25%" border="1px">
+		<tr>
+			<th>Product_id</th>
+			<th>Name</th>
+			<th>SKU</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Row Total</th>
+			<th>Remove</th>
+		</tr>
+		<?php foreach ($products as $product) : ?>
+		<tr>
+			<td><?php echo $product['product_id']; ?></td>
+			<td><?php echo $product['name']; ?></td>
+			<td><?php echo $product['sku']; ?></td>
+			<td><?php echo $product['price']; ?></td>
+			<td><?php echo $product['quantity']; ?></td>
+			<td><?php echo $product['row total']; ?></td>
+			<td><a href="Product.php?a=remove&id=<?php echo $product['product_id']; ?>"></a></td>
+		</tr>
+		<?php endforeach; ?>
+	</table>
+</body>
+</html>
